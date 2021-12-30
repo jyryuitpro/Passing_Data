@@ -1,19 +1,39 @@
 import UIKit
 
-var str = "Hello, playground"
+// Optionals (옵셔널)
 
-// Tuples (n짝, n쌍)
+// 개념
+// 값이 있을수도 있고, 없을수도 있다.
 
-var topTitle = ("메인화면", "mainIcon.png")
+// 값이 있다.
+// 값이 없다. -> nil
 
-topTitle.0
-topTitle.1
+// 0 -> 다쓴 상태인 값. (값이 있다.)
 
-// http status code
-var httpError = (statusCode: 404, description: "not found")
+var myAge: Int? = 0
 
-//httpError.0
-//httpError.1
+myAge = nil
 
-httpError.statusCode
-httpError.description
+// 값이 없는 상태 체크 -> 틀린 로직 (Swift 언어 스팩)
+if myAge == 0 {
+    // alert - 나이를 입력해주세요. X
+}
+
+if myAge == nil {
+    // alert - 나이를 입력해주세요. X
+}
+
+//var myName: String? = "" // empty String
+
+var myName: String?
+// == var myName: String? = nil
+
+// 틀린 로직
+if myName == "" {
+    // 이름을 입력해주세요.
+}
+
+// 값이 없는 상태 체크
+if myName == nil {
+    // 이름을 입력해주세요. (이름 값이 없음)
+}
