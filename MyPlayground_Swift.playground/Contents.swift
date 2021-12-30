@@ -1,13 +1,14 @@
 import UIKit
 
-// Type Annotations
+// Booleans
 
-var greeting = "Hello, playground"
-var myAge = 0
+var isOpen = false
 
-var screenHeight: Float = 560
 
-//var sum = myAge + screenHeight
 
-let guestName = "john"
+if !isOpen {
+    
+} else {
+    
+}
 
