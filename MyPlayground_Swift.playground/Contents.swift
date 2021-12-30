@@ -1,27 +1,13 @@
 import UIKit
 
-// 변수 상수
+// Type Annotations
 
 var greeting = "Hello, playground"
+var myAge = 0
 
-var age = 10
+var screenHeight: Float = 560
 
-age = 20
-age = 30
-age = 55
+//var sum = myAge + screenHeight
 
-greeting = "hello"
-greeting = "hi"
-
-// Swift 언어 특징
-// Safe type 타입 안전한, 강타입, 타입이 엄격하다.
-
-//age = "hi"
-//greeting = 111
-
-// 상수 값이 변하지 않음.
 let guestName = "john"
 
-//guestName = "kim"
-
-let userID = "asdf@gmail.com"
