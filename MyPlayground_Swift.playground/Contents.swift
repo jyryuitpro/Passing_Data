@@ -1,19 +1,24 @@
 import UIKit
 
-//기초 연산자
-//Basic Operators
+//비교 연산자
+//Comparison Operators
 
-//+ - * / %(remainder Operator)
-//Swift언어 특징
-//타입 엄격
-//강타입
-//type safe
+let a = "a"
+let b = "b"
 
-var a: Int = 20
-let b: Double = 33
+a == b
+a != b
+a > b
+a < b
+a >= b
+a <= b
 
-a = a + 2
-a += 2
+if (a > b) == true {
+    
+} else {
+    
+}
 
-a = a - 2
-a -= 2
+
+"\u{61}"
+"\u{62}"
