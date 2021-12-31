@@ -1,30 +1,37 @@
 import UIKit
 
-//String
+//Collection Types
+//집합 타입
 
-let myName = "ji young ryu"
+//Array
+//Swift - type safe
+var myNames = Array<String>()
+var myAges = [Int]()
 
-//for character in myName {
-//    print(character)
-//}
+myNames.append("kim")
+myNames.append("lee")
+myNames.append("jin")
 
-let myName1 = "ji"
-let myName2 = "young"
-let name = myName1 + myName2
+//방어코드
+//안전한 코딩 스타일
+let index = 2
+if myNames.count > index {
+    myNames[index]
+}
 
-let myName3 = "ji\nyoung\nryu"
-let myName5 =
-"""
-ji
-young
-ryu
-"""
+//myNames.append(contentsOf: ["hi", "hello"])
+myNames = myNames + ["hi"]
 
-let isOn = false
-isOn.description
+if myNames.count == 0 {
+    
+}
 
-let myNumber = 12.33
-myNumber.description
-String(myNumber).split(separator: ".")
+if myNames.isEmpty {
+    
+}
 
-"my number is \(myNumber)".dropLast()
+myNames.insert("hahaha", at: 0)
+
+for (index, name) in myNames.enumerated() {
+    print(index, name)
+}
