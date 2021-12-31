@@ -1,19 +1,26 @@
 import UIKit
 
-//Collection Types
-//집합 타입
+//Control Flow (흐름 제어)
 
-//Dictionary
+//Switch
+//조건에 맞는 케이스를 만들어서 분기
 
-var namesOfStreet = [String : Any]()
+//let b = "c"
+//
+//switch b {
+//case "b", "c":
+//    print("b or c")
+//default:
+//    print("other")
+//}
 
-namesOfStreet["302ro"] = "1st Street"
-namesOfStreet["303ro"] = "2nd Street"
+let b = 100
 
-var nameOfStreet2 = ["a" : 1, "b" : 2, "c": 3]
-
-namesOfStreet.keys
-
-for dic in namesOfStreet {
-    print(dic)
+switch b {
+case 1:
+    print("num 1")
+case 2...100:
+    print("num 2~100")
+default:
+    print("other")
 }
