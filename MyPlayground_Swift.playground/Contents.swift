@@ -1,49 +1,19 @@
 import UIKit
 
-// Optionals (옵셔널)
-// 값이 있을수도 있고, 없을수도 있다.
+//기초 연산자
+//Basic Operators
 
-var a: Int? = 20
-//var a: Int?
-var b: Int?
+//+ - * / %(remainder Operator)
+//Swift언어 특징
+//타입 엄격
+//강타입
+//type safe
 
-//Unwrapping
-//if Statements
+var a: Int = 20
+let b: Double = 33
 
-//if a != nil {
-//    print(a!)
-//}
+a = a + 2
+a += 2
 
-//if let
-//if var
-//if let hasNumber = a {
-//    //a가 nil이면 실행되지 않는다.
-//    print(hasNumber)
-//}
-
-//if var hasNumber = a {
-//    hasNumber = hasNumber * 40
-//    print(hasNumber)
-//}
-
-//guard let
-//guard var
-
-func testFunc1() {
-    guard let hasNumber = a else {
-        return
-    }
-    print(hasNumber)
-    print("end")
-}
-
-func testFunc2() {
-    guard var hasNumber = a else {
-        return
-    }
-    hasNumber = hasNumber * 2
-    print(hasNumber)
-    print("end")
-}
-
-testFunc2()
+a = a - 2
+a -= 2
