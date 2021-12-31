@@ -3,35 +3,30 @@ import UIKit
 //Collection Types
 //집합 타입
 
-//Array
-//Swift - type safe
-var myNames = Array<String>()
-var myAges = [Int]()
+//Set
 
-myNames.append("kim")
-myNames.append("lee")
-myNames.append("jin")
+var names = Set<String>()
+names.insert("kim")
+names.insert("min")
+names.insert("lee")
+names.insert("lee")
+names
 
-//방어코드
-//안전한 코딩 스타일
-let index = 2
-if myNames.count > index {
-    myNames[index]
-}
+var sameNames = ["lee", "lee", "kim", "lee"]
+sameNames
+Set(sameNames)
 
-//myNames.append(contentsOf: ["hi", "hello"])
-myNames = myNames + ["hi"]
+var numbers1: Set = [1, 2, 3, 4, 5]
+var numbers2: Set = [4, 5, 6, 7, 8]
 
-if myNames.count == 0 {
-    
-}
+//교집합
+numbers1.intersection(numbers2)
 
-if myNames.isEmpty {
-    
-}
+//합집합
+numbers1.union(numbers2)
 
-myNames.insert("hahaha", at: 0)
+//합집합 - 교집합
+numbers1.symmetricDifference(numbers2)
 
-for (index, name) in myNames.enumerated() {
-    print(index, name)
-}
+//여집합
+numbers1.subtracting(numbers2)
