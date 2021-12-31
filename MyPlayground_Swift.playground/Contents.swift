@@ -1,39 +1,26 @@
 import UIKit
 
 // Optionals (옵셔널)
-
-// 개념
 // 값이 있을수도 있고, 없을수도 있다.
 
-// 값이 있다.
-// 값이 없다. -> nil
+// 옵셔널 그냥 사용할 수 없는 경우가 많이 있음.
 
-// 0 -> 다쓴 상태인 값. (값이 있다.)
+var a: Int? = 10
+//var b: Int? = 20
+var b: Int?
 
-var myAge: Int? = 0
+// unwrapped
+// unwrapping
+// unwrap
 
-myAge = nil
+// Int? -> Int
+// String? -> String
 
-// 값이 없는 상태 체크 -> 틀린 로직 (Swift 언어 스팩)
-if myAge == 0 {
-    // alert - 나이를 입력해주세요. X
-}
+// coalesce
+var c = (a ?? 0) + (b ?? 0)
 
-if myAge == nil {
-    // alert - 나이를 입력해주세요. X
-}
+//var c = (a ?? 0) + b
+// Force-unwrap
+// 주의사항
+var d = a! + b!
 
-//var myName: String? = "" // empty String
-
-var myName: String?
-// == var myName: String? = nil
-
-// 틀린 로직
-if myName == "" {
-    // 이름을 입력해주세요.
-}
-
-// 값이 없는 상태 체크
-if myName == nil {
-    // 이름을 입력해주세요. (이름 값이 없음)
-}
