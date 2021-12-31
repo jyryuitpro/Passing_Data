@@ -1,21 +1,30 @@
 import UIKit
 
-//Unicode 범위관련
+//String
 
-//숫자만 입력받을 수 있어야 한다.
+let myName = "ji young ryu"
 
-let inputValue = "1"
+//for character in myName {
+//    print(character)
+//}
 
-"\u{30}"
-"\u{39}"
+let myName1 = "ji"
+let myName2 = "young"
+let name = myName1 + myName2
 
-if inputValue >= "\u{30}" && inputValue <= "\u{39}" {
-    print("숫자 O")
-} else {
-    print("숫자 X")
-}
+let myName3 = "ji\nyoung\nryu"
+let myName5 =
+"""
+ji
+young
+ryu
+"""
 
-//영어만 입력해야 한다.
+let isOn = false
+isOn.description
 
-"\u{41}"
-"\u{7a}"
+let myNumber = 12.33
+myNumber.description
+String(myNumber).split(separator: ".")
+
+"my number is \(myNumber)".dropLast()
