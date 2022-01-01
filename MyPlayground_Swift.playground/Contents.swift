@@ -1,26 +1,22 @@
 import UIKit
 
-//Control Flow (흐름 제어)
+//Function (함수)
 
-//Switch
-//조건에 맞는 케이스를 만들어서 분기
+//계산기 만들기 -> Class
+//더하기 기능 -> Function
 
-//let b = "c"
-//
-//switch b {
-//case "b", "c":
-//    print("b or c")
-//default:
-//    print("other")
-//}
+let a = 10
+let b = 20
 
-let b = 100
+var c = 0
 
-switch b {
-case 1:
-    print("num 1")
-case 2...100:
-    print("num 2~100")
-default:
-    print("other")
+func plus(_ num1: Int, _ num2: Int) -> Int {
+    return num1 + num2
 }
+
+func simpleFunc() {
+    print("simple Func")
+}
+
+let p = plus(a, b)
+p
