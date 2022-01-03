@@ -1,48 +1,41 @@
 import UIKit
 
-//Properties
-//프로퍼티
+//Initializer
+//생성자
+// init
 
 class MyInfo {
+    var name: String
+    var myId: String
     
-    //stored property (저장)
-    var name = ""
     var age = 0
+    var isAdult: Bool
     
-    //lazy stored property
-    lazy var myProfiles = [UIImage(named: "a"), UIImage(named: "b"), UIImage(named: "c")]
-    
-    //computed property(계산)
-    var isAdult: Bool {
-        if age > 19 {
-            return true
-        }
-        return false
+    //designated initializer
+    init(name: String, id: String) {
+        self.name = name
+        self.myId = id
+        self.isAdult = (age > 19) ? true : false
     }
     
-    //email -> 보안 -> 암호화 된 값으로 사용한다. (항상)
-    var _email = ""
-    var email: String {
-        get {
-            return _email
-        }
-        
-        set {
-            _email = newValue.hash.description
-        }
+//    init() {
+//        self.name = ""
+//        self.myId = ""
+//        self.isAdult = (age > 19) ? true : false
+//    }
+    
+    //convenience init
+    //필수조건 - 다른 init을 반드시 실행해야 한다.
+    convenience init() {
+        self.init(name: "", id: "")
     }
 }
 
-let myInfo = MyInfo()
-myInfo.email = "abc@test.com"
-myInfo.email
+//MyInfo.init(name: "kim", id: "asdf")
+var myInfo1 = MyInfo(name: "kim", id: "asdf")
 
-myInfo.age = 10
-myInfo.name = "kim"
+struct MyConfig {
+    var conf: String
+}
 
-myInfo.isAdult
-
-myInfo.myProfiles
-
-print(myInfo.age)
-
+var myCon = MyConfig(conf: <#T##String#>)
