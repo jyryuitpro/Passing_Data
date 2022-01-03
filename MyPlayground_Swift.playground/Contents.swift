@@ -1,31 +1,48 @@
 import UIKit
 
-//Closure (클로저)
+//Enumerations
 
-var names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+//enum
+//타입분류
 
-//sort
-names.sort()
-names
+//도서관 -> 항목 -> 소설, 문제집, 패션, 만화책
 
-//생략
-names.sort { (lhs, rhs) -> Bool in
-    return lhs > rhs
+//분류만 하고 싶다.
+enum BookType {
+    case fiction(title: String, price: Int, year: Int)
+    case comics(title: String, price: Int, year: Int)
+    case workbook(title: String, price: Int, year: Int)
 }
-names.sort(by: { $0 < $1 })
 
-names.sort() { $0 < $1 }
+extension BookType {
+    var typeName: String {
+        switch self {
+        case .comics:
+            return "comics"
+        case .fiction:
+            return "fiction"
+        case .workbook:
+            return "workbook"
+        }
+    }
+}
 
-names.sort { $0 < $1 }
+//var bookStyle = BookType.comics
 
-names.sort(by: < )
+var bookStyle: BookType?
 
+var books = [BookType]()
 
+func saveBook(book: BookType) {
+    books.append(book)
+}
 
-let names2 = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+saveBook(book: .comics(title: "aaa", price: 5000, year: 2020))
+saveBook(book: .comics(title: "aaa", price: 5000, year: 2020))
+saveBook(book: .comics(title: "aaa", price: 5000, year: 2020))
 
-//sort
-names2.sorted()
-names2
-
-
+for book in books {
+    if case let BookType.comics(title, _, _) = book {
+        print(title, book.typeName)
+    }
+}
