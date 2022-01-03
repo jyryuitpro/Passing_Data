@@ -1,30 +1,48 @@
 import UIKit
 
-//Class - Inheritance
-class GameInfo {
-    var homeScore = 0
-    var awayScore = 0
-    final func presentScore() -> String {
-        return homeScore.description + " : " + awayScore.description
+//Properties
+//프로퍼티
+
+class MyInfo {
+    
+    //stored property (저장)
+    var name = ""
+    var age = 0
+    
+    //lazy stored property
+    lazy var myProfiles = [UIImage(named: "a"), UIImage(named: "b"), UIImage(named: "c")]
+    
+    //computed property(계산)
+    var isAdult: Bool {
+        if age > 19 {
+            return true
+        }
+        return false
+    }
+    
+    //email -> 보안 -> 암호화 된 값으로 사용한다. (항상)
+    var _email = ""
+    var email: String {
+        get {
+            return _email
+        }
+        
+        set {
+            _email = newValue.hash.description
+        }
     }
 }
-class Soccer: GameInfo {
-    var time = 0
-}
 
-class Baseball: GameInfo {
-    var round = 0
-    override func presentScore() -> String {
-        return homeScore.description + " 대 " + awayScore.description
-    }
-}
+let myInfo = MyInfo()
+myInfo.email = "abc@test.com"
+myInfo.email
 
-class Football: GameInfo {
+myInfo.age = 10
+myInfo.name = "kim"
 
-}
+myInfo.isAdult
 
-let soccer = Soccer()
-soccer.homeScore = 2
-soccer.awayScore = 1
-soccer.time = 45
-soccer.presentScore()
+myInfo.myProfiles
+
+print(myInfo.age)
+
