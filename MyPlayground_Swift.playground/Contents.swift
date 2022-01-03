@@ -1,31 +1,30 @@
 import UIKit
 
-//Class
+//Class - Inheritance
+class GameInfo {
+    var homeScore = 0
+    var awayScore = 0
+    final func presentScore() -> String {
+        return homeScore.description + " : " + awayScore.description
+    }
+}
+class Soccer: GameInfo {
+    var time = 0
+}
 
-class MyInfo {
-    init(gender: GenderType) {
-        self.genderType = gender
-    }
-    enum GenderType {
-        case male
-        case female
-    }
-    
-    private var genderType: GenderType
-    
-    var name = ""
-    var age = 0
-    
-    func isAdult() -> Bool {
-        if age > 19 {
-            return true
-        }
-        return false
+class Baseball: GameInfo {
+    var round = 0
+    override func presentScore() -> String {
+        return homeScore.description + " 대 " + awayScore.description
     }
 }
 
-//참조 (class are reference type)
-var myInfo = MyInfo(gender: .female)
-myInfo.age = 20
-var myInfo2 = myInfo
-myInfo2.age
+class Football: GameInfo {
+
+}
+
+let soccer = Soccer()
+soccer.homeScore = 2
+soccer.awayScore = 1
+soccer.time = 45
+soccer.presentScore()
