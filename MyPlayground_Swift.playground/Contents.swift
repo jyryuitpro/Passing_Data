@@ -1,41 +1,40 @@
 import UIKit
 
-//Initializer
-//생성자
-// init
+//Deinitialization
+//해제
 
-class MyInfo {
-    var name: String
-    var myId: String
+var a: Int? = 10
+a = nil
+
+class Game {
+    var score = 0
+    var name = ""
+    var round: Round?
     
-    var age = 0
-    var isAdult: Bool
-    
-    //designated initializer
-    init(name: String, id: String) {
-        self.name = name
-        self.myId = id
-        self.isAdult = (age > 19) ? true : false
+    init() {
+        print("game init")
     }
     
-//    init() {
-//        self.name = ""
-//        self.myId = ""
-//        self.isAdult = (age > 19) ? true : false
-//    }
-    
-    //convenience init
-    //필수조건 - 다른 init을 반드시 실행해야 한다.
-    convenience init() {
-        self.init(name: "", id: "")
+    deinit {
+        print("game deinit")
     }
 }
 
-//MyInfo.init(name: "kim", id: "asdf")
-var myInfo1 = MyInfo(name: "kim", id: "asdf")
-
-struct MyConfig {
-    var conf: String
+class Round {
+    weak var gameInfo: Game?
+    var lastRound = 10
+    var roundTime = 20
+    
+    deinit {
+        print("round deinit")
+    }
 }
 
-var myCon = MyConfig(conf: <#T##String#>)
+var game: Game? = Game()
+var round: Round? = Round()
+
+game?.round = round
+round?.gameInfo = game
+
+game = nil
+round = nil
