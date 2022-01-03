@@ -1,40 +1,38 @@
 import UIKit
 
-//Deinitialization
-//해제
+//Structure
+//구조체
 
-var a: Int? = 10
-a = nil
-
-class Game {
-    var score = 0
-    var name = ""
-    var round: Round?
-    
-    init() {
-        print("game init")
-    }
-    
-    deinit {
-        print("game deinit")
-    }
+struct MediaType {
+    var type = ""
 }
 
-class Round {
-    weak var gameInfo: Game?
-    var lastRound = 10
-    var roundTime = 20
-    
-    deinit {
-        print("round deinit")
-    }
+// value type
+struct ImageType {
+    var type = ""
 }
 
-var game: Game? = Game()
-var round: Round? = Round()
+var imageType1 = ImageType()
+var imageType2 = imageType1
+var imageType3 = imageType2
 
-game?.round = round
-round?.gameInfo = game
+imageType1.type = "jpg"
+imageType2.type = "png"
 
-game = nil
-round = nil
+imageType1.type
+imageType2.type
+imageType3.type
+
+
+class MyInfo {
+    var myAge = 0
+}
+
+var info1 = MyInfo()
+var info2 = info1
+var info3 = info2
+
+info1.myAge = 20
+info1.myAge
+info2.myAge
+info3.myAge
