@@ -1,39 +1,80 @@
 import UIKit
 
-//Extension
-//기능확장
-//struct, class, enum, protocol
+//protocol
+//규격, 규약, 규칙, 청사진, 뼈대
 
-//숫자(int) 짝수, 홀수
-extension Int {
-    var oddOrEven: String {
-        if self % 2 == 0 {
-            return "짝수"
+protocol UserInfo {
+    var name: String { get set }
+    var age: Int { get }
+    func isAdult() -> Bool
+}
+
+protocol UserScore {
+    var score: Int { get set }
+}
+
+protocol UserDetailInfo: UserInfo, UserScore {
+    
+}
+
+extension UserInfo {
+    func isAdult() -> Bool {
+        if age > 19 {
+            return true
         }
-        return "홀수"
+        return false
     }
 }
 
-3.oddOrEven
-4.oddOrEven
+class Guest: UserDetailInfo {
+    var score: Int = 0
+    
+    var name: String = "kim"
+    var age: Int = 0
+    var height = 180
+}
 
-20.oddOrEven
-
-//UIColor
-//mainColor1 = xxx
-//mainColor2 = xxx
-//subColor2 = xxx
-
-//UIColor(red: 50/255, green: 70/255, blue: 120/255, alpha: 1)
-
-extension UIColor {
-//    static var mainColor1: UIColor {
-    class var mainColor1: UIColor {
-        UIColor(red: 50/255, green: 70/255, blue: 120/255, alpha: 1)
+class Member: UserInfo {
+    var name: String
+    let age: Int
+    
+    func isAdult() -> Bool {
+        if age > 19 {
+            return true
+        }
+        return false
+    }
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
     }
 }
 
-var button = UIButton()
-//button.titleLabel?.textColor = UIColor().mainColor1
-//button.titleLabel?.textColor = UIColor.mainColor1
-button.titleLabel?.textColor = .mainColor1
+class VIPMember: UserInfo {
+    var name: String = "lee"
+    var age: Int = 0
+}
+
+class UserInfoPresenter {
+    func present() {
+        let guest = Guest()
+        let member = Member(name: "jane", age: 25)
+//        member.age = 50
+        
+        let vip = VIPMember()
+        
+        let members: [UserInfo] = [guest, member, vip]
+        
+        for element in members {
+            print(element.name)
+        }
+        
+//        print(guest.name)
+//        print(member.name)
+//        print(vip.name)
+    }
+}
+
+let presenter = UserInfoPresenter()
+presenter.present()
