@@ -7,6 +7,7 @@
 //passing data (데이터를 넘겨주는 방법)
 //6가지
 //1. instance property
+//2. segue
 import UIKit
 
 class ViewController: UIViewController {
@@ -23,5 +24,12 @@ class ViewController: UIViewController {
         detailVC.someLabel.text = "bbb 스트링"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueDetail" {
+            if let detailVC = segue.destination as? SegueDetailViewController {
+                detailVC.dataString = "abcd"
+            }
+        }
+    }
 }
 

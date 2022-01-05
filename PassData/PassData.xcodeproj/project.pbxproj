@@ -18,6 +18,7 @@
 		7F6F94F82785E25A0079641E /* PassDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F94F72785E25A0079641E /* PassDataUITestsLaunchTests.swift */; };
 		7F6F95062785E3EF0079641E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F95042785E3EF0079641E /* DetailViewController.swift */; };
 		7F6F95072785E3EF0079641E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6F95052785E3EF0079641E /* DetailViewController.xib */; };
+		7F6F95092785EF320079641E /* SegueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F95082785EF320079641E /* SegueDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7F6F94F72785E25A0079641E /* PassDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F6F95042785E3EF0079641E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7F6F95052785E3EF0079641E /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		7F6F95082785EF320079641E /* SegueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				7F6F94E22785E25A0079641E /* Info.plist */,
 				7F6F95042785E3EF0079641E /* DetailViewController.swift */,
 				7F6F95052785E3EF0079641E /* DetailViewController.xib */,
+				7F6F95082785EF320079641E /* SegueDetailViewController.swift */,
 			);
 			path = PassData;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				7F6F94D92785E2590079641E /* ViewController.swift in Sources */,
 				7F6F94D52785E2590079641E /* AppDelegate.swift in Sources */,
+				7F6F95092785EF320079641E /* SegueDetailViewController.swift in Sources */,
 				7F6F94D72785E2590079641E /* SceneDelegate.swift in Sources */,
 				7F6F95062785E3EF0079641E /* DetailViewController.swift in Sources */,
 			);
